@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 
 import './App.css';
 import {  Switch, Route } from 'react-router-dom';
@@ -7,7 +7,10 @@ import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
 import CreateNote from './component/CreateNote/CreateNote';
 import Note from './component/Note/Note';
+import ComA from './component/context_api/ComA';
 
+const FirstName = createContext();
+const LastName = createContext();
 
 function App() {
 
@@ -34,6 +37,7 @@ olddata.filter((currdata,indx) =>{
   return (
     <div className="App">
     <Header />
+    <ComA />
     <CreateNote passNote={addNote} />
    
 {addItem.map((val, index)=> {
